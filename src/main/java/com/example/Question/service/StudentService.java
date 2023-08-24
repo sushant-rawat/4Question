@@ -29,6 +29,11 @@ public class StudentService {
         student1.setMaths(student.getMaths());
         student1.setBiology(student.getBiology());
         iStudentRepository.save(student1);
-        return "data updated successfully";
+        return "data of student with id "+id+" updated successfully";
+    }
+
+    public String deleteStudentData(int id) {
+        iStudentRepository.deleteById(id);
+        return "data of student with id "+id+" deleted successfully";
     }
 }
